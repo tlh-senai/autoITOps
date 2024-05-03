@@ -1,10 +1,10 @@
 FROM alpine as builder
 
 # Atualizando pacotes
-RUN apk update -y 
+RUN apk update
 
 # Instalar Terraform
-RUN apk add wget unzip curl -y
+RUN apk add wget unzip curl
 
 RUN wget https://releases.hashicorp.com/terraform/1.8.2/terraform_1.8.2_linux_amd64.zip
 
@@ -13,9 +13,9 @@ RUN unzip terraform_1.8.2_linux_amd64.zip
 RUN mv terraform /usr/local/bin/
 
  # Instalar o Python
-RUN apk add python3.9 -y 
+RUN apk add python3.9
 
-RUN apk add python3-pip -y
+RUN apk add python3-pip
 
 # instalar awscli
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -57,7 +57,7 @@ RUN echo "[default]" >> aws/credentials
 RUN echo "aws_access_key_id = $(echo $AWS_ACCESS_KEY_ID)" >> aws/credentials 
 RUN echo "aws_secret_access_key = $(echo $AWS_SECRET_ACCESS_KEY)" >> aws/credentials
 
-RUN apk update && apk add -y python3.9 python3-pip
+RUN apk update && apk add python3.9 python3-pip
 RUN python3 -m pip install -r requirements.txt
 
 EXPOSE 8080
