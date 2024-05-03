@@ -15,7 +15,7 @@ RUN mv terraform /usr/local/bin/
  # Instalar o Python
 RUN apk add python3
 
-RUN apk add python3-pip
+RUN apk add py3-pip
 
 # instalar awscli
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -57,7 +57,7 @@ RUN echo "[default]" >> aws/credentials
 RUN echo "aws_access_key_id = $(echo $AWS_ACCESS_KEY_ID)" >> aws/credentials 
 RUN echo "aws_secret_access_key = $(echo $AWS_SECRET_ACCESS_KEY)" >> aws/credentials
 
-RUN apk update && apk add python3.9 python3-pip
+RUN apk update && apk add python3 py3-pip
 RUN python3 -m pip install -r requirements.txt
 
 EXPOSE 8080
