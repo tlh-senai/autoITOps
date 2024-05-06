@@ -1,5 +1,5 @@
 name: auto_docker
-run-name: ${{ github.actor }} Pipeline Deploy 👍
+run-name: ${{ github.actor }} Pipeline Deploy 👍👍
 on: 
   push:
     branches:
