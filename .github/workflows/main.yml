@@ -92,6 +92,8 @@ jobs:
           # Step 2: Create Terraform configuration files (e.g., main.tf)
           cat <<EOF > main.tf
           provider "aws" {
+            access_key = AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+            secret_key = AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
             region = "us-east-1"
           }
 
