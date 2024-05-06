@@ -28,10 +28,10 @@ RUN apk add --no-cache aws-cli
 RUN apk add --no-cache python3 py3-pip
 
 # Copiando credenciais da AWS
-ENV AWS_ACCESS_KEY_ID
-ENV AWS_SECRET_ACCESS_KEY
-ENV AWS_DEFAULT_REGION
-ENV AWS_SESSION_TOKEN
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ARG AWS_DEFAULT_REGION
+ARG AWS_SESSION_TOKEN
 
 RUN mkdir aws
 RUN touch aws/credentials

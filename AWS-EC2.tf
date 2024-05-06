@@ -1,13 +1,13 @@
 provider "aws" {
- region = "us-east-1"
- shared_config_files=["./aws/config"]
- shared_credentials_files=["./aws/config"]
+  region                   = "us-east-1"
+  shared_config_files      = ["./aws/config"]
+  shared_credentials_files = ["./aws/config"]
 }
 
 resource "aws_instance" "ec2_instance" {
-  ami           = "ami-07caf09b362be10b8"
-  instance_type = "t2.micro"
-  subnet_id     = "subnet-0e23ff6d93717a67c" # ID da Subnet
+  ami                    = "ami-07caf09b362be10b8"
+  instance_type          = "t2.micro"
+  subnet_id              = "subnet-0e23ff6d93717a67c" # ID da Subnet
   vpc_security_group_ids = ["${aws_security_group.instance_sg.id}"]
 
   key_name = "vockey"
