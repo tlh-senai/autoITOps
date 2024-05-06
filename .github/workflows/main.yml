@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} Pipeline deploy 👍
 on:
   push:
     branches:
-      - "develop"
+      - "main"
     paths-ignore:
       - "*.txt"
 jobs:
