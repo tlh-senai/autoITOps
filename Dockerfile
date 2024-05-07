@@ -89,7 +89,7 @@ ARG AWS_SECRET_ACCESS_KEY
 ARG AWS_DEFAULT_REGION
 ARG AWS_SESSION_TOKEN
 
-RUN mkdir aws
+# RUN mkdir aws
 RUN touch aws/credentials
 RUN echo "[default]" >> aws/credentials && \
     echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> aws/credentials && \
