@@ -46,12 +46,3 @@ RUN apk add --no-cache python3 py3-pip
 RUN pip3 install --no-cache-dir --user --break-system-packages -r requirements.txt
 
 RUN terraform init
-
-# Configurando o diretório de trabalho
-
-
-# Expondo a porta 8080
-EXPOSE 8080
-
-# Executando a aplicação
-CMD ["python3", "app.py"]
